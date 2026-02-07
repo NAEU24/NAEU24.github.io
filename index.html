@@ -3,62 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Site</title>
+  <title>NAEU</title>
 
   <style>
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
-      background: #f5f5f5;
-    }
-
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      margin-bottom: 80px;
+      background: #000; /* 배경 검정 (갤러리 느낌) */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     img {
-      width: 100%;
-      border-radius: 16px;
-      display: block;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: #666;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-
-    <section>
-      <h1>NAEU</h1>
-      <p>여기에 소개 글 쓰기</p>
-    </section>
-
-    <section>
-      <img src="https://picsum.photos/1200/700" />
-    </section>
-
-    <section>
-      <img src="https://picsum.photos/1200/800" />
-    </section>
-
-    <section>
-      <img src="https://picsum.photos/1200/900" />
-    </section>
-
-  </div>
+  <img src="https://picsum.photos/1200/800" />
 </body>
 </html>
+
