@@ -42,6 +42,16 @@
   height: auto;   /* ← 이게 핵심 */
 
   object-fit: contain;
+      #adVideo3 {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;              /* 왼쪽~중앙 사이 */
+
+  width: 240px;
+  height: 420px;
+
+  object-fit: cover;
+}
 }
   </style>
 </head>
@@ -65,6 +75,11 @@
   <video id="adVideo2" autoplay muted loop playsinline>
     <source src="temu.mov">
   </video>
+ 
+  <!-- 📺 영상 3 (왼쪽아래) --> 
+  <video id="adVideo3" autoplay muted loop playsinline>
+  <source src="reels.mov">
+</video>
 
   <script>
     const btn = document.getElementById("musicBtn");
