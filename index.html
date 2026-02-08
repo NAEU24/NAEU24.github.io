@@ -55,6 +55,46 @@
 
   object-fit: cover;
 }
+    /* 글리치 이미지*/
+    #glitchImg {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 420px;
+  height: 420px;
+
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+}
+
+/* 글리치 레이어 2개 */
+#glitchImg::before,
+#glitchImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+#glitchImg::before {
+  transform: translate(var(--gx1, -2px), var(--gy1, 0px));
+  filter: hue-rotate(20deg) contrast(1.2);
+  clip-path: inset(var(--t1, 0%) 0 var(--b1, 0%) 0);
+}
+
+#glitchImg::after {
+  transform: translate(var(--gx2, 2px), var(--gy2, 0px));
+  filter: hue-rotate(-20deg) contrast(1.2);
+  clip-path: inset(var(--t2, 0%) 0 var(--b2, 0%) 0);
+}
+
 }
   </style>
 </head>
@@ -82,7 +122,35 @@
   <!-- 📺 영상 3 (왼쪽아래) --> 
   <video id="adVideo3" autoplay muted loop playsinline>
   <source src="reels.mov">
-</video>
+  </video>
+
+  <!--글리치 이미지 -->
+  <div id="glitchImg" style="--img: url('myimage.png');">
+  </div>
+
+  <script>
+  const g = document.getElementById("glitchImg");
+
+  setInterval(() => {
+    // 10번 중 1번만 강하게 튀게
+    const burst = Math.random() < 0.1;
+
+    g.style.setProperty("--gx1", (burst ? -8 : -2) + (Math.random()*4|0) + "px");
+    g.style.setProperty("--gx2", (burst ?  8 :  2) - (Math.random()*4|0) + "px");
+    g.style.setProperty("--gy1", ((Math.random()*3|0) - 1) + "px");
+    g.style.setProperty("--gy2", ((Math.random()*3|0) - 1) + "px");
+
+    // 랜덤하게 “잘리는 띠” 만들기
+    const t1 = Math.random()*70, b1 = Math.random()*70;
+    const t2 = Math.random()*70, b2 = Math.random()*70;
+
+    g.style.setProperty("--t1", t1.toFixed(0) + "%");
+    g.style.setProperty("--b1", b1.toFixed(0) + "%");
+    g.style.setProperty("--t2", t2.toFixed(0) + "%");
+    g.style.setProperty("--b2", b2.toFixed(0) + "%");
+  }, 80);
+</script>
+
 
   <script>
     const btn = document.getElementById("musicBtn");
