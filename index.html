@@ -3,9 +3,37 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    html, body { height: 100%; margin: 0; background: #000; }
+    body {
+      margin: 0;
+      background: #000;
+    }
+
+    #musicBtn {
+      position: fixed;
+      top: 20px;     /* ← 위 */
+      left: 20px;    /* ← 왼쪽 */
+      width: 40px;
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
+
+  <img id="musicBtn" src="dice.png">
+
+  <audio id="bgm" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const btn = document.getElementById("musicBtn");
+    const music = document.getElementById("bgm");
+
+    btn.onclick = () => {
+      music.play();
+    };
+  </script>
+
 </body>
 </html>
