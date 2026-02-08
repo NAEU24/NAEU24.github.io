@@ -19,13 +19,26 @@
       z-index: 10;
     }
 
-    /* 📺 영상 (오른쪽 아래, 고정 크기) */
-    #adVideo {
+    /* 📺 오른쪽 아래 영상 */
+    #adVideo1 {
       position: fixed;
       bottom: 20px;
       right: 20px;
 
-      width: 240px;   /* 고정 크기 */
+      width: 240px;
+      height: 420px;
+
+      object-fit: cover;
+    }
+
+    /* 📺 가운데 아래 영상 */
+    #adVideo2 {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 240px;
       height: 420px;
 
       object-fit: cover;
@@ -40,12 +53,17 @@
 
   <!-- 🎵 음악 -->
   <audio id="bgm" loop>
-    <source src="music.mp3" type="audio/mpeg">
+    <source src="music.mp3">
   </audio>
 
-  <!-- 📺 영상 -->
-  <video id="adVideo" autoplay muted loop playsinline>
-    <source src="youtubeshorts.mov" type="video/mp4">
+  <!-- 📺 영상 1 (오른쪽) -->
+  <video id="adVideo1" autoplay muted loop playsinline>
+    <source src="ad.mov">
+  </video>
+
+  <!-- 📺 영상 2 (가운데) -->
+  <video id="adVideo2" autoplay muted loop playsinline>
+    <source src="temu.mov">
   </video>
 
   <script>
@@ -59,4 +77,5 @@
 
 </body>
 </html>
+
 
