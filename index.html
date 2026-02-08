@@ -42,13 +42,15 @@
   height: auto;   /* ← 이게 핵심 */
 
   object-fit: contain;
+      /* 📺 왼쪽 아래 영상 */
       #adVideo3 {
   position: fixed;
   bottom: 20px;
-  left: 30px;              /* 왼쪽~중앙 사이 */
+  left: 30px;   
+  transform: translateX(-20%);
 
-  width: 180px;
-  height: 300px;
+  width: 240px;
+  height: auto;
 
   object-fit: cover;
 }
