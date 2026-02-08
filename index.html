@@ -2,29 +2,51 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       margin: 0;
       background: #000;
     }
 
+    /* 🎵 음악 버튼 (왼쪽 위) */
     #musicBtn {
       position: fixed;
       top: 20px;
       left: 20px;
       width: 40px;
       cursor: pointer;
+      z-index: 10;
+    }
+
+    /* 📺 영상 (오른쪽 아래, 고정 크기) */
+    #adVideo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+
+      width: 240px;   /* 고정 크기 */
+      height: 420px;
+
+      object-fit: cover;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- 🎵 아이콘 -->
   <img id="musicBtn" src="dice.png">
 
+  <!-- 🎵 음악 -->
   <audio id="bgm" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- 📺 영상 -->
+  <video id="adVideo" autoplay muted loop playsinline>
+    <source src="youtubeshort.mp4" type="video/mp4">
+  </video>
 
   <script>
     const btn = document.getElementById("musicBtn");
@@ -37,3 +59,4 @@
 
 </body>
 </html>
+
