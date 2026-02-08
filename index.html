@@ -33,16 +33,16 @@
 
     /* 📺 가운데 아래 영상 */
     #adVideo2 {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 
-      width: 240px;
-      height: 420px;
+  width: 240px;
+  height: auto;   /* ← 이게 핵심 */
 
-      object-fit: cover;
-    }
+  object-fit: contain;
+}
   </style>
 </head>
 
@@ -58,7 +58,7 @@
 
   <!-- 📺 영상 1 (오른쪽) -->
   <video id="adVideo1" autoplay muted loop playsinline>
-    <source src="ad.mov">
+    <source src="youtubeshorts.mov">
   </video>
 
   <!-- 📺 영상 2 (가운데) -->
